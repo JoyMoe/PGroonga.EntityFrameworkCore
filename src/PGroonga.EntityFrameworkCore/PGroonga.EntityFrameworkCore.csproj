@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <AssemblyName>PGroonga.EntityFrameworkCore</AssemblyName>
+    <RootNamespace>PGroonga.EntityFrameworkCore</RootNamespace>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <Version>0.1.0</Version>
+    <Description>PGroonga support plugin for PostgreSQL/Npgsql Entity Framework Core provider.</Description>
+    <Authors>Chino Chang</Authors>
+    <Company>JoyMoe Interactive Entertainment Limited</Company>
+    <PackageTags>npgsql;postgresql;postgres;Entity Framework Core;entity-framework-core;ef;efcore;orm;sql;pgroonga</PackageTags>
+    <Copyright>Copyright 2018 © JoyMoe Interactive Entertainment Limited</Copyright>
+    <PackageVersion>0.1.0</PackageVersion>
+    <PackageIconUrl>http://www.npgsql.org/img/postgresql.gif</PackageIconUrl>
+    <PackageLicenseUrl>https://github.com/JoyMoe/PGroonga.EntityFrameworkCore/blob/master/LICENSE</PackageLicenseUrl>
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/JoyMoe/PGroonga.EntityFrameworkCore</RepositoryUrl>
+    <LangVersion>latest</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="2.2.0" />
+    <PackageReference Include="JetBrains.Annotations" Version="2018.2.1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="Extensions\PGroongaDbFunctionsExtensions.cs" />
+  </ItemGroup>
+</Project>
