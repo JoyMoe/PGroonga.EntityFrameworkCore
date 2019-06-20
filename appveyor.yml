@@ -45,19 +45,19 @@ artifacts:
 deploy:
   - provider: NuGet
     api_key:
-      secure: ek1QGQepLvAhmsYXeVfB38YH8lHnHysDzimTk7w00bE6EaSqc11c8ISWmDdzDBtq
+      secure: SkUVFaH/8bCtjorVU9YQJxMhuj1jHJSEy4VZC3FPBQTiH2rWP/dB2GNMjsr6P+LW
     on:
       branch: master
   - provider: NuGet
     api_key:
-      secure: ek1QGQepLvAhmsYXeVfB38YH8lHnHysDzimTk7w00bE6EaSqc11c8ISWmDdzDBtq
+      secure: SkUVFaH/8bCtjorVU9YQJxMhuj1jHJSEy4VZC3FPBQTiH2rWP/dB2GNMjsr6P+LW
     on:
       appveyor_repo_tag: true
   - provider: GitHub
     description: AppVeyor CI deployment
     auth_token:
-      secure: 49h1/SXggw6sDLDix121vnZO1XeUqNJkKUDEwx+QdHQJzEJwO2bgRqOs6HPNDExh
-    artifact: Base62
+      secure: IApJWoucWEA6qjZn1atyOtaEMbBJVMcs8r4AeTwX3yOPWYK76w6VzOpzG+eTainp
+    artifact: PGroonga.EntityFrameworkCore
     draft: false
     prerelease: false
     force_update: true
