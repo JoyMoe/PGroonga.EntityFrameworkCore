@@ -8,6 +8,10 @@ PGroonga extension for Npgsql.EntityFrameworkCore.PostgreSQL
 [![NuGet](https://img.shields.io/nuget/vpre/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore/absoluteLatest)
 ![netstandard2.0](https://img.shields.io/badge/.Net-netstandard2.0-brightgreen.svg)
 
+## Attention
+
+`EF.Functions.Pgroonga*` won't work due to [aspnet/EntityFrameworkCore#13454](https://github.com/aspnet/EntityFrameworkCore/issues/13454).
+
 ## License
 
 The MIT License
