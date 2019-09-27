@@ -1,8 +1,8 @@
-version: 2.2.1
+version: 3.0.0
 init:
   - if %APPVEYOR_REPO_TAG%==false (appveyor UpdateBuild -Version "%APPVEYOR_BUILD_VERSION%-build%APPVEYOR_BUILD_NUMBER%")
 skip_branch_with_pr: true
-image: Visual Studio 2017
+image: Visual Studio 2019
 services:
   - postgresql101
 environment:
@@ -12,7 +12,7 @@ environment:
     Test__Npgsql__DefaultConnection: Host=localhost;Database=postgres;Username=postgres;Password=Password12!
     PGUSER: postgres
     PGPASSWORD: Password12!
-    PGROONGA_ZIP: pgroonga-2.1.6-postgresql-10.5-1-x64.zip
+    PGROONGA_ZIP: pgroonga-2.2.1-postgresql-10-x64.zip
     NoPackageAnalysis: true  # Suppresses warning about SemVer 2.0.0 version suffixes when packing
 cache:
   - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
