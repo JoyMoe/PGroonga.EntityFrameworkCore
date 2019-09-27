@@ -3,12 +3,13 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal;
 
+// ReSharper disable once CheckNamespace
 namespace Microsoft.EntityFrameworkCore
 {
     /// <summary>
     /// PGroonga specific extension methods for <see cref="NpgsqlDbContextOptionsBuilder"/>.
     /// </summary>
-    public static class DbContextOptionsBuilderExtensions
+    public static class PGroongaDbContextOptionsBuilderExtensions
     {
         /// <summary>
         /// Use NetTopologySuite to access SQL Server spatial data.
