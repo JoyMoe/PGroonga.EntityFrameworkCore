@@ -24,10 +24,6 @@ dotnet_csproj:
   package_version: '{version}'
 install:
   - powershell .build\setup_appveyor.ps1
-nuget:
-  account_feed: true
-  project_feed: true
-  disable_publish_on_pr: true
 configuration: Release
 before_build:
   - appveyor-retry dotnet restore -v Minimal
