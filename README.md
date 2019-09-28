@@ -27,8 +27,7 @@ public class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Post>()
             .HasIndex(g => g.Content)
-            .ForNpgsqlHasMethod("pgroonga")
-            .ForNpgsqlHasOperators("pgroonga_text_full_text_search_ops_v2");
+            .HasMethod("pgroonga");
 
     }
 }
