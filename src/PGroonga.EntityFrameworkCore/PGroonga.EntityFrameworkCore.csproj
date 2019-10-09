@@ -9,9 +9,6 @@
     <AssemblyName>PGroonga.EntityFrameworkCore</AssemblyName>
     <RootNamespace>PGroonga.EntityFrameworkCore</RootNamespace>
 
-    <Version>0.1.0</Version>
-    <PackageVersion>0.1.0</PackageVersion>
-
     <IsPackable>true</IsPackable>
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
