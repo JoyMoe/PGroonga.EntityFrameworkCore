@@ -1,6 +1,8 @@
 # PGroonga.EntityFrameworkCore
 
-PGroonga extension for Npgsql.EntityFrameworkCore.PostgreSQL
+[PGroonga](https://pgroonga.github.io) extension for [Npgsql.EntityFrameworkCore.PostgreSQL](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL)
+
+![postgresql](postgresql.png)![pgroonga](pgroonga.png)
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/JoyMoe/pgroonga-entityframeworkcore.svg)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore)
 [![license](https://img.shields.io/github/license/JoyMoe/Base62.Net.svg)](https://github.com/JoyMoe/Base62.Net/blob/master/LICENSE)
@@ -10,7 +12,7 @@ PGroonga extension for Npgsql.EntityFrameworkCore.PostgreSQL
 
 ## Attention
 
-`EF.Functions.Pgroonga*` won't work due to [aspnet/EntityFrameworkCore#13454](https://github.com/aspnet/EntityFrameworkCore/issues/13454).
+`EF.Functions.Pgroonga*` only works with `Npgsql.EntityFrameworkCore.PostgreSQL` >= 2.2.6 and >= 3.0.1 due to [aspnet/EntityFrameworkCore#13454](https://github.com/aspnet/EntityFrameworkCore/issues/13454).
 
 ## Usage
 
