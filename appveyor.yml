@@ -3,7 +3,6 @@ version: '3.0.1-build{build}'
 init:
   - if %APPVEYOR_REPO_TAG%==true (appveyor UpdateBuild -Version "%APPVEYOR_BUILD_VERSION%")
 skip_branch_with_pr: true
-skip_tags: true
 services:
   - postgresql101
 environment:
