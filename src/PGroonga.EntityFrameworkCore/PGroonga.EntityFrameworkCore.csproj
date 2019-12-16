@@ -4,7 +4,7 @@
     <Description>PGroonga support plugin for PostgreSQL/Npgsql Entity Framework Core provider.</Description>
     <PackageTags>npgsql;postgresql;postgres;Entity Framework Core;entity-framework-core;ef;efcore;orm;sql;pgroonga</PackageTags>
 
-    <TargetFramework>netstandard2.1</TargetFramework>
+    <TargetFramework>netstandard2.0</TargetFramework>
 
     <AssemblyName>PGroonga.EntityFrameworkCore</AssemblyName>
     <RootNamespace>PGroonga.EntityFrameworkCore</RootNamespace>
@@ -15,6 +15,6 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="JetBrains.Annotations" Version="2019.1.3" />
-    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.0.1" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="3.1.0" />
   </ItemGroup>
 </Project>
