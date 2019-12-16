@@ -5,6 +5,8 @@
 ![postgresql](postgresql.png)![pgroonga](pgroonga.png)
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/JoyMoe/pgroonga-entityframeworkcore.svg)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore)
+[![AppVeyor tests](https://img.shields.io/appveyor/tests/JoyMoe/pgroonga-entityframeworkcore)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore/build/tests)
+[![Codecov](https://img.shields.io/codecov/c/gh/JoyMoe/PGroonga.EntityFrameworkCore)](https://codecov.io/gh/JoyMoe/PGroonga.EntityFrameworkCore)
 [![license](https://img.shields.io/github/license/JoyMoe/Base62.Net.svg)](https://github.com/JoyMoe/Base62.Net/blob/master/LICENSE)
 [![NuGet](https://img.shields.io/nuget/v/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore)
 [![NuGet](https://img.shields.io/nuget/vpre/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore/absoluteLatest)
