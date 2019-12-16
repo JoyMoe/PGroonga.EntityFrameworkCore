@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Authors>Chino Chang</Authors>
-    <Description>PGroonga support plugin for PostgreSQL/Npgsql Entity Framework Core provider.</Description>
+    <Description>PGroonga extension for Npgsql.EntityFrameworkCore.PostgreSQL (PostgreSQL / Npgsql Entity Framework Core provider). It enable the ability to do full text search, especially Chinese, Japanese, and so on, with EntityFramework Core, PostgreSQL and Groonga.</Description>
     <PackageTags>npgsql;postgresql;postgres;Entity Framework Core;entity-framework-core;ef;efcore;pgroonga;search</PackageTags>
 
     <TargetFramework>netstandard2.0</TargetFramework>
