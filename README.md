@@ -1,6 +1,6 @@
 # PGroonga.EntityFrameworkCore
 
-[PGroonga](https://pgroonga.github.io) extension for [Npgsql.EntityFrameworkCore.PostgreSQL](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL). It enable the ability to do full text search, especially Chinese, Japanese, and so on, with EntityFramework Core, PostgreSQL and Groonga.
+[PGroonga](https://pgroonga.github.io) extension for [Npgsql.EntityFrameworkCore.PostgreSQL](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL) (PostgreSQL / Npgsql Entity Framework Core provider). It enable the ability to do full text search, especially Chinese, Japanese, and so on, with EntityFramework Core, PostgreSQL and Groonga.
 
 ![postgresql](postgresql.png)![pgroonga](pgroonga.png)
 
