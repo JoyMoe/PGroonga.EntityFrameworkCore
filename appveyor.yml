@@ -1,7 +1,7 @@
 image: Visual Studio 2019
 version: '3.0.1-build{build}'
 init:
-  - if %APPVEYOR_REPO_TAG%==true (appveyor UpdateBuild -Version "%APPVEYOR_BUILD_VERSION%")
+  - if %APPVEYOR_REPO_TAG%==true (appveyor UpdateBuild -Version "%APPVEYOR_REPO_TAG_NAME%")
 skip_branch_with_pr: true
 services:
   - postgresql101
