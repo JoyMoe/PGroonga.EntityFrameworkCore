@@ -1,5 +1,5 @@
 image: Visual Studio 2019
-version: '3.0.1-build{build}'
+version: '3.1.0-build{build}'
 init:
   - if %APPVEYOR_REPO_TAG%==true (appveyor UpdateBuild -Version "%APPVEYOR_BUILD_VERSION%")
 skip_branch_with_pr: true
