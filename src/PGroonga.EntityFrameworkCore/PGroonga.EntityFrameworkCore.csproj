@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Authors>Chino Chang</Authors>
     <Description>PGroonga support plugin for PostgreSQL/Npgsql Entity Framework Core provider.</Description>
-    <PackageTags>npgsql;postgresql;postgres;Entity Framework Core;entity-framework-core;ef;efcore;orm;sql;pgroonga</PackageTags>
+    <PackageTags>npgsql;postgresql;postgres;Entity Framework Core;entity-framework-core;ef;efcore;pgroonga;search</PackageTags>
 
     <TargetFramework>netstandard2.0</TargetFramework>
 
