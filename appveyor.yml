@@ -49,7 +49,6 @@ deploy:
     description: AppVeyor CI deployment
     auth_token:
       secure: IApJWoucWEA6qjZn1atyOtaEMbBJVMcs8r4AeTwX3yOPWYK76w6VzOpzG+eTainp
-    artifact: PGroonga.EntityFrameworkCore
     draft: false
     prerelease: false
     force_update: true
