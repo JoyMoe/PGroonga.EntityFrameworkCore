@@ -1,10 +1,12 @@
 # PGroonga.EntityFrameworkCore
 
-[PGroonga](https://pgroonga.github.io) extension for [Npgsql.EntityFrameworkCore.PostgreSQL](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL)
+[PGroonga](https://pgroonga.github.io) extension for [Npgsql.EntityFrameworkCore.PostgreSQL](https://github.com/npgsql/Npgsql.EntityFrameworkCore.PostgreSQL) (PostgreSQL / Npgsql Entity Framework Core provider). It enable the ability to do full text search, especially Chinese, Japanese, and so on, with EntityFramework Core, PostgreSQL and Groonga.
 
 ![postgresql](postgresql.png)![pgroonga](pgroonga.png)
 
 [![AppVeyor](https://img.shields.io/appveyor/ci/JoyMoe/pgroonga-entityframeworkcore.svg)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore)
+[![AppVeyor tests](https://img.shields.io/appveyor/tests/JoyMoe/pgroonga-entityframeworkcore)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore/build/tests)
+[![Codecov](https://img.shields.io/codecov/c/gh/JoyMoe/PGroonga.EntityFrameworkCore)](https://codecov.io/gh/JoyMoe/PGroonga.EntityFrameworkCore)
 [![license](https://img.shields.io/github/license/JoyMoe/Base62.Net.svg)](https://github.com/JoyMoe/Base62.Net/blob/master/LICENSE)
 [![NuGet](https://img.shields.io/nuget/v/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore)
 [![NuGet](https://img.shields.io/nuget/vpre/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore/absoluteLatest)
@@ -61,19 +63,19 @@ For more information, see `PGroongaLinqExtensions` and `PGroongaDbFunctionsExten
   * [x] ~`LIKE`~ same as PostgreSQL standard `LIKE`
   * [x] ~`ILIKE`~ same as PostgreSQL standard `ILIKE`
   * [x] ==== pgroonga_xxx_full_text_search_ops[_v2] ====
-  * [x] `&@`
-  * [x] `&@~`
-  * [x] `&@*`
-  * [x] `` &` ``
-  * [x] `&@|`
-  * [x] `&@~|`
+  * [x] `&@` Match
+  * [x] `&@~` Query
+  * [x] `&@*` SimilarSearch
+  * [x] `` &` `` ScriptQuery
+  * [x] `&@|` MatchIn
+  * [x] `&@~|` QueryIn
   * [x] ==== pgroonga_xxx_term_search_ops[_v2] ====
-  * [x] `&^`
-  * [x] `&^~`
-  * [x] `&^|`
-  * [x] `&^~|`
+  * [x] `&^` PrefixSearch
+  * [x] `&^~` PrefixRkSearch
+  * [x] `&^|` PrefixSearchIn
+  * [x] `&^~|` PrefixRkSearchIn
   * [x] ==== pgroonga_xxx_regexp_ops[_v2] ====
-  * [x] `&~`
+  * [x] `&~` RegexpMatch
 * [x] Functions
   * [x] `pgroonga_command`
   * [x] `pgroonga_command_escape_value`
