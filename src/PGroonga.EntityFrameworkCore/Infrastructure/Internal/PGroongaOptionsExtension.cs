@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.Extensions.DependencyInjection;
-using PGroonga.EntityFrameworkCore;
+using PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal
