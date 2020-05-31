@@ -1,5 +1,5 @@
 image: Visual Studio 2019
-version: '3.1.0-build{build}'
+version: "5.0.0-build{build}"
 init:
   - if %APPVEYOR_REPO_TAG%==true (appveyor UpdateBuild -Version "%APPVEYOR_REPO_TAG_NAME%")
 skip_branch_with_pr: true
@@ -13,15 +13,15 @@ environment:
     PGUSER: postgres
     PGPASSWORD: Password12!
     PGROONGA_ZIP: pgroonga-2.2.1-postgresql-10-x64.zip
-    NoPackageAnalysis: true  # Suppresses warning about SemVer 2.0.0 version suffixes when packing
+    NoPackageAnalysis: true # Suppresses warning about SemVer 2.0.0 version suffixes when packing
 cache:
   - '%USERPROFILE%\.nuget\packages -> **\*.csproj'
   - $(PGROONGA_ZIP)
 dotnet_csproj:
   patch: true
   file: '**\*.csproj;**\*.props'
-  version: '{version}'
-  package_version: '{version}'
+  version: "{version}"
+  package_version: "{version}"
 install:
   - powershell .build\setup_appveyor.ps1
 configuration: Release
