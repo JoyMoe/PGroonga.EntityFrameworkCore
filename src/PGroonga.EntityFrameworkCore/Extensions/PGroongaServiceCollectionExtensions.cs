@@ -1,7 +1,7 @@
 using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Query;
-using PGroonga.EntityFrameworkCore;
+using PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal;
 
 // ReSharper disable once CheckNamespace
 namespace Microsoft.Extensions.DependencyInjection
@@ -22,7 +22,8 @@ namespace Microsoft.Extensions.DependencyInjection
             new EntityFrameworkRelationalServicesBuilder(serviceCollection)
                 .TryAddProviderSpecificServices(
                     x => x
-                        .TryAddSingletonEnumerable<IMethodCallTranslatorPlugin, PGroongaMethodCallTranslatorPlugin>());
+                        .TryAddSingletonEnumerable<IMethodCallTranslatorPlugin, PGroongaMethodCallTranslatorPlugin>()
+                        .TryAddSingletonEnumerable<IEvaluatableExpressionFilterPlugin, PGroongaEvaluatableExpressionFilterPlugin>());
 
             return serviceCollection;
         }

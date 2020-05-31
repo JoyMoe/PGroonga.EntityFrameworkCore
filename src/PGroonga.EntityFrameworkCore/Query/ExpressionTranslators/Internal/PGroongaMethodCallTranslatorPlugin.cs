@@ -8,8 +8,7 @@ using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
 using Microsoft.EntityFrameworkCore.Storage;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Query.Expressions.Internal;
 
-// ReSharper disable once CheckNamespace
-namespace PGroonga.EntityFrameworkCore
+namespace PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal
 {
     /// <summary>
     /// Provides translation services for PGroonga members.
@@ -73,14 +72,14 @@ namespace PGroonga.EntityFrameworkCore
                 return TryTranslateOperator(method, arguments);
 
             if (sqlFunctionName != "pgroonga_score")
-                return _sqlExpressionFactory.Function(sqlFunctionName, arguments.Skip(1), method.ReturnType);
+                return _sqlExpressionFactory.Function(sqlFunctionName, arguments.Skip(1), true, new bool[0], method.ReturnType);
 
             // hack for pgroonga_score
             return _sqlExpressionFactory.Function(sqlFunctionName, new[]
             {
                 _sqlExpressionFactory.Fragment("tableoid"),
                 _sqlExpressionFactory.Fragment("ctid")
-            }, method.ReturnType);
+            }, true, new bool[2], method.ReturnType);
         }
 
         [CanBeNull]
