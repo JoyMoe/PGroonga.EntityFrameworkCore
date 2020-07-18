@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Query;
 using PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal;
@@ -17,7 +16,7 @@ namespace Microsoft.Extensions.DependencyInjection
         /// <param name="serviceCollection">The <see cref="IServiceCollection" /> to add services to.</param>
         /// <returns>The same service collection so that multiple calls can be chained.</returns>
         public static IServiceCollection AddEntityFrameworkPGroonga(
-            [NotNull] this IServiceCollection serviceCollection)
+            this IServiceCollection serviceCollection)
         {
             new EntityFrameworkRelationalServicesBuilder(serviceCollection)
                 .TryAddProviderSpecificServices(

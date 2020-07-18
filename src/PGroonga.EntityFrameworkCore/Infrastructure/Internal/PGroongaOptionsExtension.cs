@@ -12,7 +12,7 @@ namespace Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal
 {
     public class PGroongaOptionsExtension : IDbContextOptionsExtension
     {
-        private DbContextOptionsExtensionInfo _info;
+        private DbContextOptionsExtensionInfo? _info;
 
         void IDbContextOptionsExtension.ApplyServices(IServiceCollection services)
             => services.AddEntityFrameworkPGroonga();
@@ -24,13 +24,20 @@ namespace Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal
 
         public virtual void Validate(IDbContextOptions options)
         {
+            if (options == null)
+            {
+                throw new ArgumentNullException(nameof(options));
+            }
+
             var internalServiceProvider = options.FindExtension<CoreOptionsExtension>()?.InternalServiceProvider;
             if (internalServiceProvider == null) return;
             using var scope = internalServiceProvider.CreateScope();
             if (scope.ServiceProvider.GetService<IEnumerable<IMethodCallTranslatorPlugin>>()
                     ?.Any(s => s is PGroongaMethodCallTranslatorPlugin) != true)
             {
+#pragma warning disable CA1303
                 throw new InvalidOperationException($"{nameof(PGroongaDbContextOptionsBuilderExtensions.UsePGroonga)} requires {nameof(PGroongaServiceCollectionExtensions.AddEntityFrameworkPGroonga)} to be called on the internal service provider used.");
+#pragma warning restore CA1303
             }
         }
 
