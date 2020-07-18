@@ -10,7 +10,7 @@
 
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/JoyMoe/PGroonga.EntityFrameworkCore</PackageProjectUrl>
-    <PackageIconFullPath>$(MSBuildThisFileDirectory)joymoe.png</PackageIconFullPath>
+    <PackageIconFullPath>$(MSBuildThisFileDirectory)pgroonga.png</PackageIconFullPath>
   </PropertyGroup>
 
   <PropertyGroup>
