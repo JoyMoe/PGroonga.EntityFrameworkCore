@@ -1,4 +1,4 @@
-using JetBrains.Annotations;
+using System;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Infrastructure.Internal;
@@ -16,16 +16,21 @@ namespace Microsoft.EntityFrameworkCore
         /// </summary>
         /// <returns> The options builder so that further configuration can be chained. </returns>
         public static NpgsqlDbContextOptionsBuilder UsePGroonga(
-            [NotNull] this NpgsqlDbContextOptionsBuilder optionsBuilder)
+            this NpgsqlDbContextOptionsBuilder builder)
         {
-            var coreOptionsBuilder = ((IRelationalDbContextOptionsBuilderInfrastructure)optionsBuilder).OptionsBuilder;
+            if (builder == null)
+            {
+                throw new ArgumentNullException(nameof(builder));
+            }
+
+            var coreOptionsBuilder = ((IRelationalDbContextOptionsBuilderInfrastructure)builder).OptionsBuilder;
 
             var extension = coreOptionsBuilder.Options.FindExtension<PGroongaOptionsExtension>()
                             ?? new PGroongaOptionsExtension();
 
             ((IDbContextOptionsBuilderInfrastructure)coreOptionsBuilder).AddOrUpdateExtension(extension);
 
-            return optionsBuilder;
+            return builder;
         }
     }
 }

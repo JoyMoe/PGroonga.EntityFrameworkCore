@@ -9,7 +9,7 @@ namespace Microsoft.EntityFrameworkCore
         #region TEXT fields
 
         /// <summary>
-        /// This method generates the "&@" match operator
+        /// This method generates the "&amp;@" match operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text, varchar or jsonb field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -17,7 +17,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool Match(this string query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@~" query operator
+        /// This method generates the "&amp;@~" query operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text, varchar or jsonb field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -25,7 +25,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool Query(this string query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@*" similar search operator
+        /// This method generates the "&amp;@*" similar search operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -33,7 +33,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool SimilarSearch(this string query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&`" script operator
+        /// This method generates the "&amp;`" script operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text, varchar or jsonb field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -41,7 +41,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool ScriptQuery(this string query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@|" match in operator
+        /// This method generates the "&amp;@|" match in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -49,7 +49,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool MatchIn(this string query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@~|" query in operator
+        /// This method generates the "&amp;@~|" query in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -57,7 +57,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool QueryIn(this string query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^" prefix search operator
+        /// This method generates the "&amp;^" prefix search operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -65,7 +65,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixSearch(this string query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^~" prefix rk search operator
+        /// This method generates the "&amp;^~" prefix rk search operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -73,7 +73,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixRkSearch(this string query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^|" prefix search in operator
+        /// This method generates the "&amp;^|" prefix search in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -81,7 +81,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixSearchIn(this string query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^~|" prefix rk search in operator
+        /// This method generates the "&amp;^~|" prefix rk search in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -89,7 +89,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixRkSearchIn(this string query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&~" regex match operator
+        /// This method generates the "&amp;~" regex match operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text or varchar field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -101,7 +101,7 @@ namespace Microsoft.EntityFrameworkCore
         #region ARRAY(TEXT) fields
 
         /// <summary>
-        /// This method generates the "&@" match operator
+        /// This method generates the "&amp;@" match operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -109,7 +109,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool Match(this IEnumerable<string> query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@~" query operator
+        /// This method generates the "&amp;@~" query operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -117,7 +117,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool Query(this IEnumerable<string> query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@*" similar search operator
+        /// This method generates the "&amp;@*" similar search operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -125,7 +125,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool SimilarSearch(this IEnumerable<string> query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&`" script operator
+        /// This method generates the "&amp;`" script operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -133,7 +133,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool ScriptQuery(this IEnumerable<string> query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@|" match in operator
+        /// This method generates the "&amp;@|" match in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -141,7 +141,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool MatchIn(this IEnumerable<string> query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&@~|" query in operator
+        /// This method generates the "&amp;@~|" query in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -149,7 +149,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool QueryIn(this IEnumerable<string> query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^" prefix search operator
+        /// This method generates the "&amp;^" prefix search operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -157,7 +157,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixSearch(this IEnumerable<string> query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^~" prefix rk search operator
+        /// This method generates the "&amp;^~" prefix rk search operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keyword">Keyword to search</param>
@@ -165,7 +165,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixRkSearch(this IEnumerable<string> query, string keyword) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^|" prefix search in operator
+        /// This method generates the "&amp;^|" prefix search in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keywords">Keywords to search</param>
@@ -173,7 +173,7 @@ namespace Microsoft.EntityFrameworkCore
         public static bool PrefixSearchIn(this IEnumerable<string> query, IEnumerable<string> keywords) => throw new NotSupportedException();
 
         /// <summary>
-        /// This method generates the "&^~|" prefix rk search in operator
+        /// This method generates the "&amp;^~|" prefix rk search in operator
         /// </summary>
         /// <param name="query">A plain search query, should be a text[] field</param>
         /// <param name="keywords">Keywords to search</param>

@@ -170,7 +170,9 @@ namespace Microsoft.EntityFrameworkCore
         /// <param name="keywords">Keywords to be found</param>
         /// <returns>An array of positions consists of offset and length</returns>
         /// <remarks>https://pgroonga.github.io/reference/functions/pgroonga-match-positions-byte.html</remarks>
+#pragma warning disable CA1814
         public static int[,] PgroongaMatchPositionsByte(this DbFunctions _, string target, string[] keywords) => throw new NotSupportedException();
+#pragma warning restore CA1814
 
         /// <summary>
         /// Get positions of the specified keywords in the specified text
@@ -180,7 +182,9 @@ namespace Microsoft.EntityFrameworkCore
         /// <param name="keywords">Keywords to be found</param>
         /// <returns>An array of positions consists of offset and length</returns>
         /// <remarks>https://pgroonga.github.io/reference/functions/pgroonga-match-positions-character.html</remarks>
+#pragma warning disable CA1814
         public static int[,] PgroongaMatchPositionsCharacter(this DbFunctions _, string target, string[] keywords) => throw new NotSupportedException();
+#pragma warning restore CA1814
 
         /// <summary>
         /// Converts a text into a normalized form using Groonga's normalizer modules

@@ -4,10 +4,9 @@
 
 ![postgresql](postgresql.png)![pgroonga](pgroonga.png)
 
-[![AppVeyor](https://img.shields.io/appveyor/ci/JoyMoe/pgroonga-entityframeworkcore.svg)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore)
-[![AppVeyor tests](https://img.shields.io/appveyor/tests/JoyMoe/pgroonga-entityframeworkcore)](https://ci.appveyor.com/project/JoyMoe/pgroonga-entityframeworkcore/build/tests)
+[![GitHub Workflow Status](https://img.shields.io/github/workflow/status/JoyMoe/PGroonga.EntityFrameworkCore/build)](https://github.com/JoyMoe/PGroonga.EntityFrameworkCore/actions?query=workflow%3Abuild)
 [![Codecov](https://img.shields.io/codecov/c/gh/JoyMoe/PGroonga.EntityFrameworkCore)](https://codecov.io/gh/JoyMoe/PGroonga.EntityFrameworkCore)
-[![license](https://img.shields.io/github/license/JoyMoe/Base62.Net.svg)](https://github.com/JoyMoe/Base62.Net/blob/master/LICENSE)
+[![License](https://img.shields.io/github/license/JoyMoe/Base62.Net.svg)](https://github.com/JoyMoe/Base62.Net/blob/master/LICENSE)
 [![NuGet](https://img.shields.io/nuget/v/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore)
 [![NuGet](https://img.shields.io/nuget/vpre/PGroonga.EntityFrameworkCore.svg)](https://www.nuget.org/packages/PGroonga.EntityFrameworkCore/absoluteLatest)
 ![netstandard2.0](https://img.shields.io/badge/.Net-netstandard2.0-brightgreen.svg)
@@ -31,7 +30,8 @@ public class ApplicationDbContext : DbContext
 
         modelBuilder.Entity<Post>()
             .HasIndex(g => g.Content)
-            .HasMethod("pgroonga");
+            .HasMethod("pgroonga")
+            .HasOperators("pgroonga_varchar_full_text_search_ops_v2");
 
     }
 }

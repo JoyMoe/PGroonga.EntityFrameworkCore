@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using JetBrains.Annotations;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Query;
 using Microsoft.EntityFrameworkCore.Query.SqlExpressions;
@@ -56,14 +56,23 @@ namespace PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal
 
         public PGroongaMethodCallTranslator(SqlExpressionFactory sqlExpressionFactory, IRelationalTypeMappingSource typeMappingSource)
         {
+            if (typeMappingSource == null)
+            {
+                throw new ArgumentNullException(nameof(typeMappingSource));
+            }
+
             _sqlExpressionFactory = sqlExpressionFactory;
             _boolMapping = typeMappingSource.FindMapping(typeof(bool));
         }
 
         /// <inheritdoc />
-        [CanBeNull]
-        public SqlExpression Translate(SqlExpression instance, MethodInfo method, IReadOnlyList<SqlExpression> arguments)
+        public SqlExpression? Translate(SqlExpression instance, MethodInfo method, IReadOnlyList<SqlExpression> arguments)
         {
+            if (method == null)
+            {
+                throw new ArgumentNullException(nameof(method));
+            }
+
             if (method.DeclaringType != typeof(PGroongaDbFunctionsExtensions) &&
                 method.DeclaringType != typeof(PGroongaLinqExtensions))
                 return null;
@@ -72,7 +81,7 @@ namespace PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal
                 return TryTranslateOperator(method, arguments);
 
             if (sqlFunctionName != "pgroonga_score")
-                return _sqlExpressionFactory.Function(sqlFunctionName, arguments.Skip(1), true, new bool[0], method.ReturnType);
+                return _sqlExpressionFactory.Function(sqlFunctionName, arguments.Skip(1), true, Array.Empty<bool>(), method.ReturnType);
 
             // hack for pgroonga_score
             return _sqlExpressionFactory.Function(sqlFunctionName, new[]
@@ -82,8 +91,7 @@ namespace PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal
             }, true, new bool[2], method.ReturnType);
         }
 
-        [CanBeNull]
-        private SqlExpression TryTranslateOperator(MemberInfo method, IReadOnlyList<SqlExpression> arguments)
+        private SqlExpression? TryTranslateOperator(MemberInfo method, IReadOnlyList<SqlExpression> arguments)
         {
             if (method.DeclaringType != typeof(PGroongaLinqExtensions))
                 return null;
@@ -104,14 +112,14 @@ namespace PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal
                 _ => null
             };
 
-            SqlCustomBinaryExpression BoolReturningOnTwoQueries(string @operator)
+            PostgresUnknownBinaryExpression BoolReturningOnTwoQueries(string @operator)
             {
 #pragma warning disable EF1001
-                return new SqlCustomBinaryExpression(
+                return new PostgresUnknownBinaryExpression(
                     _sqlExpressionFactory.ApplyDefaultTypeMapping(arguments[0]),
                     _sqlExpressionFactory.ApplyDefaultTypeMapping(arguments[1]),
                     @operator,
-                    typeof(bool),
+                    _boolMapping.ClrType,
                     _boolMapping
                 );
 #pragma warning restore EF1001
