@@ -3,7 +3,7 @@
 
   <PropertyGroup>
     <Company>JoyMoe Interactive Entertainment Limited</Company>
-    <_ProjectCopyright>© JoyMoe Interactive Entertainment Limited. All rights reserved.</_ProjectCopyright>
+    <_ProjectCopyright>Â© JoyMoe Interactive Entertainment Limited. All rights reserved.</_ProjectCopyright>
 
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>git://github.com/JoyMoe/PGroonga.EntityFrameworkCore</RepositoryUrl>
