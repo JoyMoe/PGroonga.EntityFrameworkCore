@@ -127,18 +127,18 @@ SELECT pg_terminate_backend (pg_stat_activity.pid)
         public override Task OpenConnectionAsync() => Connection.OpenAsync();
 
         static T ExecuteScalar<T>(DbConnection connection, string sql, params object[] parameters)
-            => Execute(connection, command => (T)command.ExecuteScalar(), sql, false, parameters);
+            => Execute(connection, command => (T)command.ExecuteScalar()!, sql, false, parameters);
 
-        static int ExecuteNonQuery(DbConnection connection, string sql, object[] parameters = null)
+        static int ExecuteNonQuery(DbConnection connection, string sql, object[]? parameters = null)
             => Execute(connection, command => command.ExecuteNonQuery(), sql, false, parameters);
 
         static T Execute<T>(
             DbConnection connection, Func<DbCommand, T> execute, string sql,
-            bool useTransaction = false, object[] parameters = null)
+            bool useTransaction = false, object[]? parameters = null)
             => ExecuteCommand(connection, execute, sql, useTransaction, parameters);
 
         static T ExecuteCommand<T>(
-            DbConnection connection, Func<DbCommand, T> execute, string sql, bool useTransaction, object[] parameters)
+            DbConnection connection, Func<DbCommand, T> execute, string sql, bool useTransaction, object[]? parameters)
         {
             if (connection.State != ConnectionState.Closed)
             {
@@ -169,11 +169,13 @@ SELECT pg_terminate_backend (pg_stat_activity.pid)
         }
 
         static DbCommand CreateCommand(
-            DbConnection connection, string commandText, IReadOnlyList<object> parameters = null)
+            DbConnection connection, string commandText, IReadOnlyList<object>? parameters = null)
         {
             var command = (NpgsqlCommand)connection.CreateCommand();
 
+#pragma warning disable CA2100 // Review SQL queries for security vulnerabilities
             command.CommandText = commandText;
+#pragma warning restore CA2100 // Review SQL queries for security vulnerabilities
             command.CommandTimeout = CommandTimeout;
 
             if (parameters == null) return command;
