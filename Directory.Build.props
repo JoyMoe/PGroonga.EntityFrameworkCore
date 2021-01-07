@@ -1,16 +1,15 @@
 <Project>
+
   <Import Project="Sdk.props" Sdk="Microsoft.DotNet.Arcade.Sdk" />
 
   <PropertyGroup>
-    <Company>JoyMoe Interactive Entertainment Limited</Company>
-    <_ProjectCopyright>© JoyMoe Interactive Entertainment Limited. All rights reserved.</_ProjectCopyright>
-
-    <RepositoryType>git</RepositoryType>
-    <RepositoryUrl>git://github.com/JoyMoe/PGroonga.EntityFrameworkCore</RepositoryUrl>
-
-    <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <PackageProjectUrl>https://github.com/JoyMoe/PGroonga.EntityFrameworkCore</PackageProjectUrl>
-    <PackageIconFullPath>$(MSBuildThisFileDirectory)pgroonga.png</PackageIconFullPath>
+    <LangVersion>latest</LangVersion>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>portable</DebugType>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+    <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -29,15 +28,19 @@
   -->
   <PropertyGroup Condition=" '$(GITHUB_ACTIONS)' == 'true' AND '$(GITHUB_REF.StartsWith(`refs/pull/`))' == 'false' ">
     <OfficialBuild>true</OfficialBuild>
-    <OfficialBuildId>$(_AspNetContribBuildNumber)</OfficialBuildId>
+    <OfficialBuildId>$(_ComputedOfficialBuildId)</OfficialBuildId>
   </PropertyGroup>
 
   <PropertyGroup>
-    <LangVersion>preview</LangVersion>
-    <NoWarn>$(NoWarn);CS1591</NoWarn>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <DebugSymbols>true</DebugSymbols>
-    <Nullable>enable</Nullable>
+    <Company>JoyMoe Interactive Entertainment Limited</Company>
+    <_ProjectCopyright>© JoyMoe Interactive Entertainment Limited. All rights reserved.</_ProjectCopyright>
+
+    <PackageIconFullPath>$(MSBuildThisFileDirectory)pgroonga.png</PackageIconFullPath>
+    <PackageProjectUrl>https://github.com/JoyMoe/PGroonga.EntityFrameworkCore</PackageProjectUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+
+    <RepositoryType>git</RepositoryType>
+    <RepositoryUrl>git://github.com/JoyMoe/PGroonga.EntityFrameworkCore</RepositoryUrl>
   </PropertyGroup>
 
   <PropertyGroup>
@@ -59,12 +62,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" PrivateAssets="All" Version="3.0.0" />
-    <PackageReference Include="Microsoft.NetCore.Analyzers" PrivateAssets="All" Version="3.0.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.NetAnalyzers" PrivateAssets="All" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectCapability Include="DynamicDependentFile" />
     <ProjectCapability Include="DynamicFileNesting" />
   </ItemGroup>
+
 </Project>
