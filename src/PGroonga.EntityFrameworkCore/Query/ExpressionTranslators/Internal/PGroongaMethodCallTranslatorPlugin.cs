@@ -63,11 +63,15 @@ namespace PGroonga.EntityFrameworkCore.Query.ExpressionTranslators.Internal
             }
 
             _sqlExpressionFactory = sqlExpressionFactory;
-            _boolMapping = typeMappingSource.FindMapping(typeof(bool));
+            _boolMapping          = typeMappingSource.FindMapping(typeof(bool))!;
         }
 
         /// <inheritdoc />
-        public SqlExpression? Translate(SqlExpression instance, MethodInfo method, IReadOnlyList<SqlExpression> arguments, IDiagnosticsLogger<DbLoggerCategory.Query> logger)
+        public virtual SqlExpression? Translate(
+            SqlExpression?                             instance,
+            MethodInfo                                 method,
+            IReadOnlyList<SqlExpression>               arguments,
+            IDiagnosticsLogger<DbLoggerCategory.Query> logger)
         {
             if (method == null)
             {

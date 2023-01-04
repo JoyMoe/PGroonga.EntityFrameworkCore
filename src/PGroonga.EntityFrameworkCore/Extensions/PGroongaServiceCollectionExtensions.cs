@@ -19,10 +19,8 @@ namespace Microsoft.Extensions.DependencyInjection
             this IServiceCollection serviceCollection)
         {
             new EntityFrameworkRelationalServicesBuilder(serviceCollection)
-                .TryAddProviderSpecificServices(
-                    x => x
-                        .TryAddSingletonEnumerable<IMethodCallTranslatorPlugin, PGroongaMethodCallTranslatorPlugin>()
-                        .TryAddSingletonEnumerable<IEvaluatableExpressionFilterPlugin, PGroongaEvaluatableExpressionFilterPlugin>());
+               .TryAdd<IMethodCallTranslatorPlugin, PGroongaMethodCallTranslatorPlugin>()
+               .TryAdd<IEvaluatableExpressionFilterPlugin, PGroongaEvaluatableExpressionFilterPlugin>();
 
             return serviceCollection;
         }
