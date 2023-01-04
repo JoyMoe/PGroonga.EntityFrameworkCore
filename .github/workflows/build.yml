@@ -82,12 +82,12 @@ jobs:
           name: packages-${{ matrix.os_name }}
           path: ./artifacts/packages/Release/Shipping
 
-      - name: Publish test results
-        uses: actions/upload-artifact@v1
-        if: ${{ always() }}
-        with:
-          name: testresults-${{ matrix.os_name }}
-          path: ./artifacts/TestResults/Release
+      # - name: Publish test results
+      #   uses: actions/upload-artifact@v1
+      #   if: ${{ always() }}
+      #   with:
+      #     name: testresults-${{ matrix.os_name }}
+      #     path: ./artifacts/TestResults/Release
 
       - name: Push NuGet packages to NuGet.org
         run: dotnet nuget push "artifacts\packages\Release\Shipping\*.nupkg" --api-key ${{ secrets.NUGET_API_KEY }} --skip-duplicate --source https://api.nuget.org/v3/index.json

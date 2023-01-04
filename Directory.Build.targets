@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <Project>
 
   <Import Project="Sdk.targets" Sdk="Microsoft.DotNet.Arcade.Sdk" />
-  <Import Project="Packages.props" />
 
   <PropertyGroup>
     <Copyright>$(_ProjectCopyright)</Copyright>
